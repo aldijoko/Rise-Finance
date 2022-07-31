@@ -37,7 +37,7 @@
 </section>
 
 <section class="middleOneContainer">
-	<h1>consulting for startups in fintech</h1>
+	<h1 class="oneHeader">consulting for startups in fintech</h1>
 	<p class="oneTxt">
 		Our Team consists of proven experts from finance, tech and science. This mix makes it possible
 		for our team to deliver the best results to all our clients.
@@ -46,7 +46,7 @@
 </section>
 
 <section class="middleTwoContainer">
-	<h1>Delivering value in every step of production</h1>
+	<h1 class="midTwoHeader">Delivering value in every step of production</h1>
 	<div class="midTwoContent">
 		<div class="midTwoImg">
 			<img src="img/midImg.svg" alt="" />
@@ -60,18 +60,18 @@
 			<div class="midCard">
 				<div class="cardContent">
 					<img src="/img/analytic.svg" alt="" />
-					<p>Analysis</p>
-					<h1>1</h1>
+					<p class="cardTxt">Analysis</p>
+					<h1 class="cardHeader">1</h1>
 				</div>
 				<div class="cardContent">
 					<img src="/img/growth.svg" alt="" />
-					<p>Growth Phase</p>
-					<h1>2</h1>
+					<p class="cardTxt">Growth Phase</p>
+					<h1 class="cardHeader">2</h1>
 				</div>
 				<div class="cardContent">
 					<img src="/img/profit.svg" alt="" />
-					<p>Profit</p>
-					<h1>3</h1>
+					<p class="cardTxt">Profit</p>
+					<h1 class="cardHeader">3</h1>
 				</div>
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 </section>
 
 <section class="middleThreeContainer">
-	<h1>Case Study</h1>
+	<h1 class="ThreeHeader">Case Study</h1>
 	<p class="txtMiddleTri">Some results from our clients</p>
 	<div class="midThreeContext">
 		<div class="threeCard">
@@ -193,11 +193,13 @@
 	}
 
 	.navbar {
+		position: fixed;
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding: 20px 50px;
+		z-index: 50;
 	}
 
 	.icon,
@@ -206,8 +208,66 @@
 	}
 
 	.topContainer {
+		position: relative;
 		width: 100%;
-		padding: 50px;
+		padding: 200px 50px;
+	}
+
+	.topContainer::before {
+		content: '';
+		z-index: -1;
+		width: 509px;
+		height: 509px;
+		border-radius: 50%;
+		position: absolute;
+		/* top: 0; */
+		/* right: 0; */
+		bottom: -150px;
+		left: -120px;
+		background: linear-gradient(177.23deg, #423ee0 -13.49%, #812de2 109.75%);
+		filter: blur(100px);
+		opacity: 0.2;
+		transition: opacity 0.3s;
+	}
+
+	.topContainer::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: inherit;
+	}
+
+	.topContent::before {
+		content: '';
+		z-index: -1;
+		width: 350px;
+		height: 350px;
+		border-top-left-radius: 50%;
+		border-bottom-left-radius: 50%;
+		position: absolute;
+		top: -100px;
+		right: 0px;
+		/* bottom: -200px;
+		left: -150px; */
+		background: linear-gradient(177.23deg, #423ee0 -13.49%, #812de2 109.75%);
+		filter: blur(100px);
+		opacity: 0.2;
+		transition: opacity 0.3s;
+	}
+
+	.topContent::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: inherit;
 	}
 
 	.topContent {
@@ -250,6 +310,13 @@
 		width: 274px;
 		border-style: solid;
 		border-image: linear-gradient(to right, #812de2, #3a49f9) 1;
+		cursor: pointer;
+		opacity: 0.7;
+		transition: 0.5s;
+	}
+
+	.btnTop:hover {
+		opacity: 1;
 	}
 
 	.rightTop {
@@ -285,13 +352,14 @@
 		justify-content: center;
 	}
 
-	.middleOneContainer h1 {
+	.oneHeader, .midTwoHeader, .ThreeHeader, .fourTitle {
 		font-size: 50px;
-		line-height: 80px;
+		line-height: 70px;
 		font-weight: 600;
 		text-transform: capitalize;
-		width: 50%;
+		width: 100%;
 		text-align: center;
+		padding: 1rem 20rem;
 	}
 
 	.oneTxt {
@@ -311,23 +379,45 @@
 	}
 
 	.middleTwoContainer {
+		position: relative;
 		width: 100%;
-		/* padding: 50px; */
+		padding: 50px 50px 150px 50px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
-	.middleTwoContainer h1 {
-		font-size: 50px;
-		line-height: 50px;
-		font-weight: 600;
-		text-transform: capitalize;
-		width: 50%;
-		text-align: center;
-		padding: 50px;
+	.middleTwoContainer::before {
+		content: '';
+		z-index: -1;
+		width: 459px;
+		height: 459px;
+		/* border-radius: 50%; */
+		border-top-left-radius: 30%;
+		border-bottom-left-radius: 80%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		/* bottom: -200px;
+		left: -150px; */
+		background: linear-gradient(177.23deg, #423ee0 -13.49%, #812de2 109.75%);
+		filter: blur(100px);
+		opacity: 0.3;
+		transition: opacity 0.3s;
 	}
+
+	.middleTwoContainer::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: inherit;
+	}
+
 
 	.midTwoContent {
 		width: 100%;
@@ -339,17 +429,46 @@
 	.midTwoImg {
 		width: 40%;
 		padding-left: 50px;
+		position: relative;
 		/* box-shadow: inset 0 0 12px 12px linear-gradient(177.23deg, #423EE0 -13.49%, #812DE2 109.75%), inset 0 0 3px 2px linear-gradient(177.23deg, #423EE0 -13.49%, #812DE2 109.75%); */
 	}
+
+	
 
 	.midTwoImg img {
 		width: 70%;
 	}
 
+	.midTwoImg::before {
+		content: '';
+		z-index: -1;
+		width: 80%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(177.23deg, #423ee0 -13.49%, #812de2 109.75%);
+		filter: blur(20px);
+		opacity: 0.5;
+		transition: opacity 0.3s;
+	}
+
+	.midTwoImg::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: inherit;
+	}
+
 	.midTwoContext {
 		width: 60%;
 		/* margin-top: 50px; */
-		padding: 50px 150px;
+		padding: 50px 110px;
 	}
 
 	.title {
@@ -390,20 +509,21 @@
 		background-clip: content-box, border-box;
 	}
 
-	.cardContent p {
+	.cardTxt {
 		margin-top: 15px;
 		text-align: center;
 	}
 
-	.cardContent h1 {
+	.cardHeader {
 		position: absolute;
-		top: 55px;
+		top: 100px;
 		font-size: 90px;
 		font-weight: 500;
 		line-height: 117px;
 	}
 
 	.middleThreeContainer {
+		position: relative;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -413,14 +533,7 @@
 		justify-content: center;
 	}
 
-	.middleThreeContainer h1 {
-		font-size: 50px;
-		line-height: 50px;
-		font-weight: 600;
-		text-transform: capitalize;
-		width: 50%;
-		text-align: center;
-	}
+	
 
 	.txtMiddleTri {
 		color: var(--black);
@@ -440,6 +553,7 @@
 	}
 
 	.threeCard {
+		position: relative;
 		display: flex;
 		align-items: center;
 		width: 60%;
@@ -484,6 +598,13 @@
 		width: 80%;
 		border-style: solid;
 		border-image: linear-gradient(to right, #812de2, #3a49f9) 1;
+		transition: 0.5s;
+		opacity: 0.6;
+		cursor: pointer;
+	}
+
+	.btnMidTri:hover {
+		opacity: 1;
 	}
 
 	.phoneTri {
@@ -543,7 +664,55 @@
 		margin-top: 25px;
 	}
 
+	.threeCard::before {
+		content: '';
+		z-index: 0;
+		width: 600px;
+		height: 600px;
+		border-top-right-radius: 50%;
+		border-bottom-right-radius: 50%;
+		position: absolute;
+		/* top: 0;
+		right: 0; */
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(177.23deg, #423EE0 -13.49%, #812DE2 109.75%);
+		filter: blur(100px);
+		opacity: 0.3;
+		transition: opacity 0.3s;
+	}
+
+	.middleThreeContainer::before {
+		content: '';
+		z-index: 1;
+		width: 500px;
+		height: 500px;
+		border-top-left-radius: 50%;
+		border-bottom-left-radius: 50%;
+		position: absolute;
+		/* top: 0; */
+		right: 0;
+		bottom: -250px;
+		/* left: 0; */
+		background: linear-gradient(177.23deg, rgba(66, 62, 224, 0.71) -13.49%, #4829A5 109.75%);
+		filter: blur(100px);
+		opacity: 0.5;
+		transition: opacity 0.3s;
+	}
+
+	.middleThreeContainer::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: inherit;
+	}
+
 	.middleFourContainer {
+		position: relative;
 		background-color: #15123e;
 		width: 100%;
 		padding: 50px;
@@ -553,22 +722,43 @@
 		align-items: center;
 	}
 
-	.fourTitle {
-		font-size: 50px;
-		line-height: 50px;
-		font-weight: 600;
-		text-transform: capitalize;
-		width: 50%;
-		text-align: center;
-		padding: 50px;
+	.middleFourContainer::before {
+		content: '';
+		z-index: 0;
+		width: 800px;
+		height: 800px;
+		border-radius: 50%;
+		position: absolute;
+		/* top: 0;
+		right: 0; */
+		bottom: -100px;
+		left: -200px;
+		background: linear-gradient(177.23deg, #423EE0 -13.49%, #812DE2 109.75%);
+		filter: blur(100px);
+		opacity: 0.2;
+		transition: opacity 0.3s;
 	}
+
+	/* .middleFourContainer::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: inherit;
+	} */
+
+
+
+	
 
 	.fourSubtitle {
 		font-size: 22px;
 		line-height: 28.6px;
 		text-align: center;
 		width: 60%;
-		margin-bottom: 50px;
 	}
 
 	.fourImg {
@@ -627,7 +817,8 @@
 	footer {
 		max-width: 100%;
 		background: #121139;
-		padding: 20px;
+	
+		z-index: 1;
 	}
 
 	.footerContainer {
@@ -635,7 +826,6 @@
 		display: flex;
 		flex-direction: column;
 		padding: 100px 150px;
-		
 	}
 
 	.footerList {
@@ -643,8 +833,8 @@
 		margin-top: 20px;
 		/* justify-content: space-between; */
 		width: 100%;
-		padding-bottom: 80px;
-		border-bottom: 2px solid #71777D;
+		padding-bottom: 50px;
+		border-bottom: 2px solid #71777d;
 	}
 
 	.footerContent {
@@ -673,10 +863,14 @@
 		cursor: pointer;
 	}
 
+	li:hover {
+		text-decoration: underline;
+	}
+
 	.footerText {
 		text-align: center;
 		font-size: 12px;
-		color: #92989F;
+		color: #92989f;
 		margin-top: 20px;
 	}
 </style>
