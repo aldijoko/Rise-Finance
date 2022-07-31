@@ -6,7 +6,7 @@
 		{ label: 'About', href: 'about' },
 		{ label: 'Gallery', href: 'gallery' },
 		{ label: 'Contact', href: 'contact' }
-	]
+	];
 
 	let openToggle = false;
 </script>
@@ -17,10 +17,10 @@
 			<img src="img/IconLogo.svg" alt="" />
 		</div>
 		<div class="ToggleMenu">
-			<div class="menus" on:click={() => (openToggle = !openToggle)} class:change={openToggle} >
+			<div class="menus" on:click={() => (openToggle = !openToggle)} class:change={openToggle}>
 				<img src="img/IconBurgers.svg" alt="" />
 			</div>
-			<div class="sideToggle" class:open={openToggle} >
+			<div class="sideToggle" class:open={openToggle}>
 				<!-- <a href="#a" class="closebtn" on:click={() => (openToggle = !openToggle)}>&times;</a> -->
 				<ul>
 					{#each dashboard as db}
@@ -31,7 +31,6 @@
 				</ul>
 			</div>
 		</div>
-		
 	</nav>
 </header>
 <section class="topContainer">
@@ -116,7 +115,7 @@
 			</div>
 			<div class="imgTri">
 				<img src="/logo/triLogo.svg" alt="" />
-				<img class="phoneTri" src="/img/phoneScreen.svg" alt="" />
+				<!-- <img class="phoneTri" src="/img/phoneScreen.svg" alt="" />
 				<div class="phoneCard1">
 					<p class="phoneCardTxt">Accquired 8 long time customers</p>
 				</div>
@@ -125,7 +124,7 @@
 				</div>
 				<div class="phoneCard3">
 					<p class="phoneCardTxt">hired 24 talented developers</p>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -245,10 +244,8 @@
 	.menus {
 		width: 100%;
 		display: flex;
-		justify-content: end
+		justify-content: end;
 	}
-
-	
 
 	.sideToggle {
 		position: fixed;
@@ -270,13 +267,13 @@
 		text-decoration: none;
 	}
 
-	.closebtn {
+	/* .closebtn {
 		position: absolute;
-	}
+	} */
 
 	.open {
-			width: 10%;
-		}
+		width: 10%;
+	}
 
 	.topContainer {
 		position: relative;
@@ -423,7 +420,10 @@
 		justify-content: center;
 	}
 
-	.oneHeader, .midTwoHeader, .ThreeHeader, .fourTitle {
+	.oneHeader,
+	.midTwoHeader,
+	.ThreeHeader,
+	.fourTitle {
 		font-size: 50px;
 		line-height: 70px;
 		font-weight: 600;
@@ -489,7 +489,6 @@
 		background: inherit;
 	}
 
-
 	.midTwoContent {
 		width: 100%;
 		margin-top: 100px;
@@ -503,8 +502,6 @@
 		position: relative;
 		/* box-shadow: inset 0 0 12px 12px linear-gradient(177.23deg, #423EE0 -13.49%, #812DE2 109.75%), inset 0 0 3px 2px linear-gradient(177.23deg, #423EE0 -13.49%, #812DE2 109.75%); */
 	}
-
-	
 
 	.midTwoImg img {
 		width: 70%;
@@ -603,8 +600,6 @@
 		align-items: center;
 		justify-content: center;
 	}
-
-	
 
 	.txtMiddleTri {
 		color: var(--black);
@@ -747,7 +742,7 @@
 		right: 0; */
 		bottom: 0;
 		left: 0;
-		background: linear-gradient(177.23deg, #423EE0 -13.49%, #812DE2 109.75%);
+		background: linear-gradient(177.23deg, #423ee0 -13.49%, #812de2 109.75%);
 		filter: blur(100px);
 		opacity: 0.3;
 		transition: opacity 0.3s;
@@ -765,7 +760,7 @@
 		right: 0;
 		bottom: -250px;
 		/* left: 0; */
-		background: linear-gradient(177.23deg, rgba(66, 62, 224, 0.71) -13.49%, #4829A5 109.75%);
+		background: linear-gradient(177.23deg, rgba(66, 62, 224, 0.71) -13.49%, #4829a5 109.75%);
 		filter: blur(100px);
 		opacity: 0.5;
 		transition: opacity 0.3s;
@@ -804,7 +799,7 @@
 		right: 0; */
 		bottom: -100px;
 		left: -200px;
-		background: linear-gradient(177.23deg, #423EE0 -13.49%, #812DE2 109.75%);
+		background: linear-gradient(177.23deg, #423ee0 -13.49%, #812de2 109.75%);
 		filter: blur(100px);
 		opacity: 0.2;
 		transition: opacity 0.3s;
@@ -820,10 +815,6 @@
 		left: 0;
 		background: inherit;
 	} */
-
-
-
-	
 
 	.fourSubtitle {
 		font-size: 22px;
@@ -888,7 +879,7 @@
 	footer {
 		max-width: 100%;
 		background: #121139;
-	
+
 		z-index: 1;
 	}
 
@@ -943,5 +934,111 @@
 		font-size: 12px;
 		color: #92989f;
 		margin-top: 20px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.topContainer {
+			padding: 100px 50px;
+		}
+		.topContent {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.leftTop {
+			padding-top: 20px;
+		}
+
+		.leftTop h1 {
+			font-size: 65px;
+		}
+
+		.leftTop h2 {
+			font-size: 60px;
+		}
+
+		.btnTop {
+			width: 100%;
+		}
+
+		.logoIpsum {
+			padding-top: 100px;
+		}
+
+		.oneHeader,
+		.midTwoHeader,
+		.ThreeHeader,
+		.fourTitle {
+			width: 100%;
+			/* text-align: center; */
+			padding: 50px;
+		}
+
+		.oneTxt {
+			width: 100%;
+			padding: 50px;
+		}
+
+		.midTwoContent {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			/* justify-content: space-evenly; */
+		}
+
+		.midTwoImg {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			position: relative;
+		}
+
+		.midTwoContext {
+			width: 100%;
+			/* margin-top: 50px; */
+			padding: 50px;
+		}
+
+		.middleThreeContainer {
+			width: 100%;
+		}
+
+		.txtMiddleTri {
+			width: 100%;
+			padding: 50px;
+		}
+
+		.threeCard {
+			width: 100%;
+			padding: 20px;
+		}
+
+		.middleFourContainer {
+			/* display: none; */
+		}
+
+		.fourSubtitle {
+			width: 100%;
+		}
+
+		.footerContainer {
+			padding: 50px;
+		}
+
+		.footerList {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.footerContent {
+			width: 100%;
+		}
+
+		.footerSubs {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 50px;
+		}
 	}
 </style>
