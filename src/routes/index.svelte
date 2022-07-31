@@ -1,4 +1,14 @@
 <script>
+	import { slide } from 'svelte/transition';
+
+	const dashboard = [
+		{ label: 'Home', href: '/' },
+		{ label: 'About', href: 'about' },
+		{ label: 'Gallery', href: 'gallery' },
+		{ label: 'Contact', href: 'contact' }
+	]
+
+	let openToggle = false;
 </script>
 
 <header>
@@ -6,9 +16,22 @@
 		<div class="icon">
 			<img src="img/IconLogo.svg" alt="" />
 		</div>
-		<div class="menus">
-			<img src="img/IconBurgers.svg" alt="" />
+		<div class="ToggleMenu">
+			<div class="menus" on:click={() => (openToggle = !openToggle)} class:change={openToggle} >
+				<img src="img/IconBurgers.svg" alt="" />
+			</div>
+			<div class="sideToggle" class:open={openToggle} >
+				<!-- <a href="#a" class="closebtn" on:click={() => (openToggle = !openToggle)}>&times;</a> -->
+				<ul>
+					{#each dashboard as db}
+						<li>
+							<a href={db.href}>{db.label}</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
 		</div>
+		
 	</nav>
 </header>
 <section class="topContainer">
@@ -200,12 +223,60 @@
 		justify-content: space-between;
 		padding: 20px 50px;
 		z-index: 50;
+		background: linear-gradient(177.23deg, #423ee0 -13.49%, #812de2 109.75%);
 	}
 
-	.icon,
-	.menus {
+	.icon {
 		cursor: pointer;
+		width: 100%;
 	}
+
+	.ToggleMenu {
+		/* background-color: blue; */
+		position: relative;
+		width: 100%;
+		cursor: pointer;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		box-sizing: border-box;
+	}
+
+	.menus {
+		width: 100%;
+		display: flex;
+		justify-content: end
+	}
+
+	
+
+	.sideToggle {
+		position: fixed;
+		top: 85px;
+		right: 0;
+		width: 0;
+		/* padding: 10px; */
+		border-radius: 20px;
+		background: linear-gradient(177.23deg, #423ee0 -13.49%, #812de2 109.75%);
+		transition: top 2000ms ease-in-out;
+	}
+
+	.sideToggle ul {
+		text-align: center;
+	}
+
+	.sideToggle a {
+		color: white;
+		text-decoration: none;
+	}
+
+	.closebtn {
+		position: absolute;
+	}
+
+	.open {
+			width: 10%;
+		}
 
 	.topContainer {
 		position: relative;
